@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agulhas de Algodão — Furo de Orelha Humanizado</title>
+<meta name="description" content="Furo de orelha humanizado com agulha estéril, técnica indolor e cuidado de enfermagem. Para bebês, crianças e adultos. Agende seu horário.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   1. RESET E VARIÁVEIS
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Cores */
+  --cream:      #FDFBF8;
+  --cotton:     #F2EBE4;
+  --cotton-2:   #E8DDD3;
+  --ink:        #241E1B;
+  --ink-soft:   #5C514B;
+  --muted:      #8A7D76;
+  --rose:       #B5796A;
+  --rose-light: #E3C4BA;
+  --plum:       #3D2A33;
+  --line:       #E4DAD2;
+
+  /* Tipografia */
+  --display: 'Fraunces', Georgia, serif;
+  --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Layout */
+  --max: 1200px;
+  --pad: 24px;
+  --radius: 20px;
+  --radius-sm: 12px;
+  --radius-pill: 100px;
+
+  /* Sombras */
+  --shadow-sm: 0 2px 8px rgba(36,30,27,.04);
+  --shadow: 0 12px 32px rgba(36,30,27,.07);
+  --shadow-lg: 0 24px 64px rgba(36,30,27,.10);
+
+  /* Transições */
+  --t: .3s cubic-bezier(.4,0,.2,1);
+}
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--body);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 16px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* ============================================
+   2. UTILITÁRIOS
+   ============================================ */
+.container {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+.section { padding: 100px 0; }
+.section--tight { padding: 72px 0; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 20px;
+}
+.eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--rose);
+  opacity: .6;
+}
+
+h1, h2, h3, h4 { font-family: var(--display); font-weight: 400; line-height: 1.12; letter-spacing: -.02em; }
+
+.h-display { font-size: clamp(2.8rem, 7vw, 5.2rem); }
+.h-section { font-size: clamp(2rem, 4.2vw, 3.2rem); }
+.h-card    { font-size: 1.35rem; }
+
+.lead {
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  max-width: 58ch;
+}
+
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+/* ============================================
+   3. BOTÕES
+   ============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 30px;
+  border-radius: var(--radius-pill);
+  font-size: 14.5px;
+  font-weight: 500;
+  letter-spacing: .01em;
+  transition: var(--t);
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+.btn--primary {
+  background: var(--ink);
+  color: var(--cream);
+}
+.btn--primary:hover {
+  background: var(--plum);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+.btn--rose {
+  background: var(--rose);
+  color: #fff;
+}
+.btn--rose:hover {
+  background: #a26758;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(181,121,106,.28);
+}
+.btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+.btn--ghost:hover {
+  border-color: var(--ink);
+  background: rgba(36,30,27,.03);
+}
+.btn--light {
+  background: var(--cream);
+  color: var(--ink);
+}
+.btn--light:hover { background: #fff; transform: translateY(-2px); }
+.btn--block { width: 100%; }
+
+.btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+/* ============================================
+   4. HEADER
+   ============================================ */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 16px 0;
+  transition: var(--t);
+  background: rgba(253,251,248,0);
+}
+.header.is-scrolled {
+  background: rgba(253,251,248,.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-family: var(--display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: -.01em;
+  flex-shrink: 0;
+}
+.logo__mark {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--cotton);
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+}
+.logo__mark svg { width: 19px; height: 19px; }
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  list-style: none;
+}
+.nav__links a {
+  font-size: 14px;
+  color: var(--ink-soft);
+  transition: var(--t);
+  position: relative;
+}
+.nav__links a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -5px;
+  width: 0; height: 1px;
+  background: var(--rose);
+  transition: width var(--t);
+}
+.nav__links a:hover { color: var(--ink); }
+.nav__links a:hover::after { width: 100%; }
+
+.nav__actions { display: flex; align-items: center; gap: 12px; }
+.nav__actions .btn { padding: 12px 22px; font-size: 13.5px; }
+
+.burger {
+  display: none;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  place-items: center;
+}
+.burger span {
+  display: block;
+  width: 17px; height: 1.5px;
+  background: var(--ink);
+  position: relative;
+  transition: var(--t);
+}
+.burger span::before, .burger span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 17px; height: 1.5px;
+  background: var(--ink);
+  transition: var(--t);
+}
+.burger span::before { top: -5.5px; }
+.burger span::after  { top: 5.5px; }
+
+/* ============================================
+   5. HERO
+   ============================================ */
+.hero {
+  position: relative;
+  padding: 60px 0 100px;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -35%; right: -18%;
+  width: 720px; height: 720px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(227,196,186,.42) 0%, rgba(227,196,186,0) 68%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%; left: -14%;
+  width: 560px; height: 560px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(242,235,228,.85) 0%, rgba(242,235,228,0) 70%);
+  pointer-events: none;
+}
+
+.hero__grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.hero__title { margin-bottom: 26px; }
+.hero__title em {
+  font-style: italic;
+  color: var(--rose);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 38px;
+}
+
+.hero__proof {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+}
+.avatars { display: flex; }
+.avatars span {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--cream);
+  margin-left: -10px;
+  background: var(--cotton-2);
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  font-family: var(--body);
+}
+.avatars span:first-child { margin-left: 0; }
+.hero__proof p {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.hero__proof strong { color: var(--ink); font-weight: 600; }
+
+/* Visual do hero */
+.hero__visual {
+  position: relative;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+}
+.hero__rings {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  animation: spin 46s linear infinite;
+}
+.hero__rings:nth-child(2) { inset: 8%;  border-style: dashed; animation-duration: 34s; animation-direction: reverse; }
+.hero__rings:nth-child(3) { inset: 16%; border-color: var(--rose-light); animation-duration: 26s; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.hero__blob {
+  position: relative;
+  width: 68%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(150deg, var(--cotton) 0%, var(--rose-light) 100%);
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+.hero__blob svg { width: 42%; height: auto; opacity: .9; }
+
+.hero__badge {
+  position: absolute;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  padding: 10px 18px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+.hero__badge b { color: var(--rose); font-weight: 600; }
+.badge--1 { top: 9%;  left: -4%;  animation: float 6s ease-in-out infinite; }
+.badge--2 { bottom: 14%; right: -6%; animation: float 6s ease-in-out infinite .8s; }
+.badge--3 { bottom: 4%; left: 10%; animation: float 6s ease-in-out infinite 1.6s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-11px); }
+}
+
+/* ============================================
+   6. MARQUEE / FAIXA DE CONFIANÇA
+   ============================================ */
+.marquee {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 22px 0;
+  overflow: hidden;
+  display: flex;
+}
+.marquee__track {
+  display: flex;
+  gap: 56px;
+  padding-right: 56px;
+  animation: scroll 34s linear infinite;
+  flex-shrink: 0;
+  align-items: center;
+}
+.marquee__track span {
+  font-size: 13.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(253,251,248,.62);
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  white-space: nowrap;
+  font-weight: 400;
+}
+.marquee__track span::after {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--rose);
+  flex-shrink: 0;
+}
+@keyframes scroll { to { transform: translateX(-50%); } }
+
+/* ============================================
+   7. SEÇÃO — DIFERENCIAIS
+   ============================================ */
+.section__head { max-width: 660px; margin-bottom: 60px; }
+
+.cards-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.feature {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 34px 28px;
+  transition: var(--t);
+}
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+  border-color: var(--rose-light);
+}
+.feature__icon {
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  background: var(--cotton);
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+}
+.feature__icon svg { width: 22px; height: 22px; stroke: var(--rose); }
+.feature h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-family: var(--display);
+}
+.feature p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ============================================
+   8. SERVIÇOS
+   ============================================ */
+.services { background: var(--cotton); }
+
+.cards-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.service {
+  background: var(--cream);
+  border-radius: var(--radius);
+  padding: 34px 30px;
+  border: 1px solid rgba(228,218,210,.7);
+  transition: var(--t);
+  display: flex;
+  flex-direction: column;
+}
+.service:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+.service__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.service h3 {
+  font-size: 1.3rem;
+  font-family: var(--display);
+}
+.service__price {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  color: var(--rose);
+  white-space: nowrap;
+}
+.service__price small {
+  font-size: .68em;
+  color: var(--muted);
+  font-family: var(--body);
+}
+.service p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+.service ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.service li {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.service li::before {
+  content: '';
+  width: 15px; height: 15px;
+  flex-shrink: 0;
+  margin-top: 3px;
+  border-radius: 50%;
+  background: var(--cotton);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B5796A' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  background-size: 9px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ============================================
+   9. COMO FUNCIONA
+   ============================================ */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  counter-reset: step;
+}
+.step {
+  padding: 0 40px;
+  border-left: 1px solid var(--line);
+  counter-increment: step;
+  position: relative;
+}
+.step:first-child { border-left: none; padding-left: 0; }
+.step:last-child { padding-right: 0; }
+
+.step__num {
+  font-family: var(--display);
+  font-size: 3rem;
+  color: var(--rose-light);
+  line-height: 1;
+  margin-bottom: 18px;
+  display: block;
+}
+.step h3 { font-size: 1.2rem; margin-bottom: 12px; font-family: var(--display); }
+.step p { font-size: 14.5px; color: var(--muted); line-height: 1.68; }
+
+/* ============================================
+   10. PLANOS / PACOTES
+   ============================================ */
+.plans { background: var(--cotton); }
+
+.plans__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.plan {
+  background: var(--cream);
+  border: 1px solid rgba(228,218,210,.8);
+  border-radius: var(--radius);
+  padding: 38px 32px;
+  transition: var(--t);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.plan:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+
+.plan--featured {
+  background: var(--plum);
+  color: var(--cream);
+  border-color: var(--plum);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-10px);
+}
+.plan--featured:hover { transform: translateY(-15px); }
+.plan--featured .plan__desc,
+.plan--featured .plan__period { color: rgba(253,251,248,.6); }
+.plan--featured .plan__features li { color: rgba(253,251,248,.85); }
+.plan--featured .plan__features { border-color: rgba(253,251,248,.14); }
+.plan--featured .plan__features li::before {
+  background: rgba(253,251,248,.12);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E3C4BA' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  background-size: 9px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.plan__tag {
+  position: absolute;
+  top: -12px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--rose);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+}
+
+.plan__name { font-size: 1.05rem; font-family: var(--display); margin-bottom: 8px; }
+.plan__desc { font-size: 13.5px; color: var(--muted); margin-bottom: 26px; line-height: 1.55; }
+
+.plan__price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-family: var(--display);
+  font-size: 2.6rem;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.plan__price sup { font-size: .38em; top: -.9em; position: relative; }
+.plan__period { font-size: 13px; color: var(--muted); margin-bottom: 28px; display: block; }
+
+.plan__features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+  margin-bottom: 32px;
+  flex-grow: 1;
+}
+.plan__features li {
+  font-size: 14px;
+  color: var(--ink-soft);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  line-height: 1.5;
+}
+.plan__features li::before {
+  content: '';
+  width: 16px; height: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  border-radius: 50%;
+  background: var(--cotton);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B5796A' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  background-size: 9px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ============================================
+   11. DEPOIMENTOS
+   ============================================ */
+.quote {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 34px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  transition: var(--t);
+}
+.quote:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+.quote__stars { display: flex; gap: 3px; }
+.quote__stars svg { width: 15px; height: 15px; fill: var(--rose); }
+.quote p {
+  font-family: var(--display);
+  font-size: 1.08rem;
+  line-height: 1.55;
+  color: var(--ink);
+  flex-grow: 1;
+}
+.quote__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.quote__avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--cotton-2);
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  flex-shrink: 0;
+}
+.quote__author strong { display: block; font-size: 14px; font-weight: 600; }
+.quote__author span { font-size: 12.5px; color: var(--muted); }
+
+/* ============================================
+   12. FAQ
+   ============================================ */
+.faq__grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 72px;
+  align-items: start;
+}
+.faq__list { display: flex; flex-direction: column; }
+
+.faq__item { border-bottom: 1px solid var(--line); }
+.faq__item:first-child { border-top: 1px solid var(--line); }
+
+.faq__item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 26px 44px 26px 0;
+  font-family: var(--display);
+  font-size: 1.12rem;
+  color: var(--ink);
+  position: relative;
+  transition: var(--t);
+  line-height: 1.4;
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary:hover { color: var(--rose); }
+
+.faq__item summary::after {
+  content: '';
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  width: 13px; height: 13px;
+  margin-top: -6.5px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B5796A' stroke-width='2' stroke-linecap='round'%3E%3Cline x1='12' y1='5' x2='12' y2='19'/%3E%3Cline x1='5' y1='12' x2='19' y2='12'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform var(--t);
+}
+.faq__item[open] summary::after { transform: rotate(135deg); }
+.faq__item[open] summary { color: var(--rose); }
+
+.faq__answer {
+  padding: 0 60px 28px 0;
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+/* ============================================
+   13. CTA FINAL
+   ============================================ */
+.cta {
+  background: var(--plum);
+  color: var(--cream);
+  border-radius: 28px;
+  padding: 76px 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -8%;
+  width: 520px; height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(181,121,106,.32) 0%, transparent 68%);
+}
+.cta::after {
+  content: '';
+  position: absolute;
+  bottom: -55%; left: -8%;
+  width: 460px; height: 460px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(227,196,186,.16) 0%, transparent 70%);
+}
+.cta > * { position: relative; z-index: 2; }
+.cta h2 { font-size: clamp(2rem, 4.4vw, 3.3rem); margin-bottom: 20px; }
+.cta h2 em { font-style: italic; color: var(--rose-light); }
+.cta p {
+  color: rgba(253,251,248,.68);
+  max-width: 50ch;
+  margin: 0 auto 38px;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+.cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* ============================================
+   14. FOOTER
+   ============================================ */
+.footer {
+  padding: 72px 0 36px;
+  border-top: 1px solid var(--line);
+  margin-top: 100px;
+}
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 56px;
+}
+.footer__brand p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 18px 0 24px;
+  max-width: 34ch;
+}
+.footer__social { display: flex; gap: 10px; }
+.footer__social a {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  transition: var(--t);
+}
+.footer__social a:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+.footer__social a:hover svg { stroke: var(--cream); }
+.footer__social svg { width: 16px; height: 16px; stroke: var(--ink-soft); transition: var(--t); }
+
+.footer__col h4 {
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.footer__col a, .footer__col li {
+  font-size: 14px;
+  color: var(--muted);
+  transition: var(--t);
+  line-height: 1.5;
+}
+.footer__col a:hover { color: var(--rose); }
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+.footer__bottom p { font-size: 13px; color: var(--muted); }
+
+/* ============================================
+   15. WHATSAPP FLUTUANTE
+   ============================================ */
+.wa {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  background: #25D366;
+  color: #fff;
+  padding: 14px 22px 14px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 10px 30px rgba(37,211,102,.34);
+  transition: var(--t);
+}
+.wa:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 16px 40px rgba(37,211,102,.42); }
+.wa svg { width: 22px; height: 22px; fill: #fff; flex-shrink: 0; }
+
+/* ============================================
+   16. RESPONSIVO
+   ============================================ */
+@media (max-width: 1024px) {
+  .hero__grid { grid-template-columns: 1fr; gap: 56px; }
+  .hero__visual { max-width: 440px; margin: 0 auto; }
+  .cards-4 { grid-template-columns: repeat(2, 1fr); }
+  .faq__grid { grid-template-columns: 1fr; gap: 40px; }
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .nav__links { display: none; }
+}
+
+@media (max-width: 860px) {
+  .section { padding: 72px 0; }
+  .cards-3, .plans__grid, .steps { grid-template-columns: 1fr; }
+  .steps { gap: 40px; }
+  .step { border-left: none; padding: 0; border-top: 1px solid var(--line); padding-top: 32px; }
+  .step:first-child { border-top: none; padding-top: 0; }
+  .plan--featured { transform: none; }
+  .plan--featured:hover { transform: translateY(-5px); }
+  .cta { padding: 56px 28px; border-radius: 22px; }
+  .footer__grid { grid-template-columns: 1fr; gap: 36px; }
+  .footer__bottom { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 640px) {
+  :root { --pad: 20px; }
+  .header { padding: 12px 0; }
+  .nav__actions .btn--ghost { display: none; }
+  .burger { display: grid; }
+  .cards-4 { grid-template-columns: 1fr; }
+  .hero { padding: 32px 0 72px; }
+  .hero__badge { font-size: 11.5px; padding: 8px 14px; }
+  .badge--1 { left: 0; }
+  .badge--2 { right: 0; }
+  .badge--3 { display: none; }
+  .wa span { display: none; }
+  .wa { padding: 15px; border-radius: 50%; }
+  .faq__item summary { font-size: 1rem; padding-right: 36px; }
+  .faq__answer { padding-right: 20px; }
+  .marquee__track span { font-size: 12px; }
+}
+
+/* Acessibilidade */
+:focus-visible {
+  outline: 2px solid var(--rose);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="container">
+    <nav class="nav">
+      <a href="#" class="logo">
+        <span class="logo__mark">
+          <!-- Marca: agulha + algodão -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="#B5796A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 3v18"/>
+            <circle cx="12" cy="17" r="2.6" fill="#E3C4BA" stroke="none"/>
+          </svg>
+        </span>
+        Agulhas de Algodão
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="#diferenciais">Diferenciais</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#planos">Pacotes</a></li>
+        <li><a href="#faq">Dúvidas</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <a href="#planos" class="btn btn--ghost">Ver pacotes</a>
+        <a href="https://wa.me/5500000000000" class="btn btn--primary" target="_blank" rel="noopener">
+          Agendar horário
+        </a>
+        <button class="burger" aria-label="Abrir menu">
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__grid">
+
+        <div class="hero__content">
+          <span class="eyebrow">Furo humanizado • com técnica de enfermagem</span>
+
+          <h1 class="h-display hero__title">
+            O primeiro furo<br>
+            não precisa <em>doer</em><br>
+            nem assustar.
+          </h1>
+
+          <p class="lead">
+            Agulha estéril, descartável e única. Marcação anatômica individual,
+            ambiente acolhedor e todo o cuidado que a pele do seu bebê,
+            da sua criança — ou a sua — merece.
+          </p>
+
+          <div class="hero__actions">
+            <a href="https://wa.me/5500000000000" class="btn btn--rose" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+              Agendar pelo WhatsApp
+            </a>
+            <a href="#servicos" class="btn btn--ghost">Conhecer os serviços</a>
+          </div>
+
+          <div class="hero__proof">
+            <div class="avatars">
+              <span>M</span><span>A</span><span>J</span><span>+</span>
+            </div>
+            <p>
+              <strong>Mais de 800 orelhinhas</strong> furadas com<br>
+              técnica humanizada e acompanhamento pós-furo.
+            </p>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero__rings"></div>
+          <div class="hero__rings"></div>
+          <div class="hero__rings"></div>
+
+          <div class="hero__blob">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#8C5B4F" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9.2"/>
+              <path d="M12 2.8v18.4"/>
+              <circle cx="12" cy="17" r="2.6" fill="#E3C4BA" stroke="none"/>
+            </svg>
+          </div>
+
+          <span class="hero__badge badge--1">✨ <b>Agulha</b> estéril</span>
+          <span class="hero__badge badge--2">🤍 <b>Técnica</b> indolor</span>
+          <span class="hero__badge badge--3">👶 <b>A partir</b> de 3 meses</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Agulha descartável</span>
+      <span>Marcação anatômica</span>
+      <span>Ambiente acolhedor</span>
+      <span>Materiais estéreis</span>
+      <span>Acompanhamento pós-furo</span>
+      <span>Bebês e crianças</span>
+      <span>Agulha descartável</span>
+      <span>Marcação anatômica</span>
+      <span>Ambiente acolhedor</span>
+      <span>Materiais estéreis</span>
+      <span>Acompanhamento pós-furo</span>
+      <span>Bebês e crianças</span>
+    </div>
+  </div>
+
+  <!-- ============ DIFERENCIAIS ============ -->
+  <section class="section" id="diferenciais">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Por que humanizado</span>
+        <h2 class="h-section">Muito além de<br>um furo na orelha.</h2>
+        <p class="lead" style="margin-top:20px">
+          Cada detalhe do atendimento existe para reduzir desconforto,
+          evitar traumas e garantir uma cicatrização tranquila.
+        </p>
+      </div>
+
+      <div class="cards-4">
+        <article class="feature">
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v20M2 12h20"/>
+            </svg>
+          </div>
+          <h3>Agulha, não pistola</h3>
+          <p>A agulha é estéril, descartável e de uso único. Ela corta o tecido em vez de rompê-lo, causando menos trauma e cicatrizando mais rápido.</p>
+        </article>
+
+        <article class="feature">
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 8v8M8 12h8"/>
+            </svg>
+          </div>
+          <h3>Marcação anatômica</h3>
+          <p>O ponto é escolhido a partir do formato da orelha, da idade e da joia. Nada de furo torto, descentralizado ou em local inadequado.</p>
+        </article>
+
+        <article class="feature">
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8z"/>
+            </svg>
+          </div>
+          <h3>Ambiente acolhedor</h3>
+          <p>Atendimento individual, com calma, sem pressa e com técnicas de conforto. Para crianças, o tempo e o tom de voz mudam tudo.</p>
+        </article>
+
+        <article class="feature">
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 12l2 2 4-4"/>
+              <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+            </svg>
+          </div>
+          <h3>Acompanhamento pós-furo</h3>
+          <p>Você recebe orientações claras de cuidado e tem canal aberto para tirar dúvidas durante todo o período de cicatrização.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVIÇOS ============ -->
+  <section class="section services" id="servicos">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Serviços</span>
+        <h2 class="h-section">Um cuidado para<br>cada fase da vida.</h2>
+      </div>
+
+      <div class="cards-3">
+        <article class="service">
+          <div class="service__top">
+            <h3>Furo Baby</h3>
+            <span class="service__price">R$ 00<small>,00</small></span>
+          </div>
+          <p>Para bebês a partir de 3 meses. Feito com contenção segura, agulha estéril e joia antialérgica adequada à idade.</p>
+          <ul>
+            <li>Agulha descartável de uso único</li>
+            <li>Joia de titânio ou ouro cirúrgico</li>
+            <li>Orientações de cuidado para os pais</li>
+          </ul>
+        </article>
+
+        <article class="service">
+          <div class="service__top">
+            <h3>Furo Infantil</h3>
+            <span class="service__price">R$ 00<small>,00</small></span>
+          </div>
+          <p>Para crianças e adolescentes, com abordagem tranquila, explicação passo a passo e respeito ao tempo de cada um.</p>
+          <ul>
+            <li>Avaliação do lóbulo e da cartilagem</li>
+            <li>Técnica de conforto e distração</li>
+            <li>Kit de cicatrização incluso</li>
+          </ul>
+        </article>
+
+        <article class="service">
+          <div class="service__top">
+            <h3>Furo Adulto</h3>
+            <span class="service__price">R$ 00<small>,00</small></span>
+          </div>
+          <p>Do primeiro furo ao segundo, terceiro e cartilagens. Marcação personalizada conforme a anatomia da sua orelha.</p>
+          <ul>
+            <li>Lóbulo, hélix, tragus e conch</li>
+            <li>Escolha de joia na hora</li>
+            <li>Retorno de acompanhamento incluso</li>
+          </ul>
+        </article>
+      </div>
+
+      <div style="text-align:center; margin-top:44px">
+        <a href="https://wa.me/5500000000000" class="btn btn--primary" target="_blank" rel="noopener">
+          Consultar valores e disponibilidade
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA ============ -->
+  <section class="section" id="como-funciona">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Como funciona</span>
+        <h2 class="h-section">Simples, seguro<br>e sem surpresas.</h2>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <span class="step__num">01</span>
+          <h3>Agendamento</h3>
+          <p>Você escolhe o melhor dia e horário pelo WhatsApp. Atendimento individual, sem fila e sem espera com outras pessoas.</p>
+        </div>
+        <div class="step">
+          <span class="step__num">02</span>
+          <h3>Avaliação e marcação</h3>
+          <p>Analisamos o formato da orelha, conversamos sobre a joia ideal e marcamos o ponto com precisão antes de qualquer coisa.</p>
+        </div>
+        <div class="step">
+          <span class="step__num">03</span>
+          <h3>Furo e acompanhamento</h3>
+          <p>Procedimento rápido com material estéril. Depois, você recebe todas as orientações de cuidado e canal aberto para dúvidas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PACOTES ============ -->
+  <section class="section plans" id="planos">
+    <div class="container">
+      <div class="section__head text-center mx-auto" style="text-align:center; margin-left:auto; margin-right:auto;">
+        <span class="eyebrow" style="justify-content:center">Pacotes</span>
+        <h2 class="h-section">Escolha o cuidado<br>ideal para você.</h2>
+      </div>
+
+      <div class="plans__grid">
+
+        <article class="plan">
+          <h3 class="plan__name">Furo Essencial</h3>
+          <p class="plan__desc">O primeiro par de brincos, feito com toda a segurança.</p>
+          <div class="plan__price"><sup>R$</sup>00<small style="font-size:.3em; color:var(--muted); font-family:var(--body)">,00</small></div>
+          <span class="plan__period">por atendimento</span>
+          <ul class="plan__features">
+            <li>Par de furos no lóbulo</li>
+            <li>Agulha estéril descartável</li>
+            <li>Joia antialérgica inclusa</li>
+            <li>Orientações de cuidado</li>
+          </ul>
+          <a href="https://wa.me/5500000000000" class="btn btn--ghost btn--block" target="_blank" rel="noopener">Agendar</a>
+        </article>
+
+        <article class="plan plan--featured">
+          <span class="plan__tag">Mais escolhido</span>
+          <h3 class="plan__name">Furo Humanizado Completo</h3>
+          <p class="plan__desc">A experiência completa, do agendamento ao pós-furo.</p>
+          <div class="plan__price"><sup>R$</sup>00<small style="font-size:.3em; color:rgba(253,251,248,.5); font-family:var(--body)">,00</small></div>
+          <span class="plan__period">por atendimento</span>
+          <ul class="plan__features">
+            <li>Par de furos no lóbulo</li>
+            <li>Marcação anatômica individual</li>
+            <li>Joia premium inclusa</li>
+            <li>Kit de cicatrização completo</li>
+            <li>Retorno de acompanhamento</li>
+          </ul>
+          <a href="https://wa.me/5500000000000" class="btn btn--light btn--block" target="_blank" rel="noopener">Agendar agora</a>
+        </article>
+
+        <article class="plan">
+          <h3 class="plan__name">Cartilagem</h3>
+          <p class="plan__desc">Para quem quer ir além do lóbulo, com técnica segura.</p>
+          <div class="plan__price"><sup>R$</sup>00<small style="font-size:.3em; color:var(--muted); font-family:var(--body)">,00</small></div>
+          <span class="plan__period">por furo</span>
+          <ul class="plan__features">
+            <li>Hélix, tragus, conch ou daith</li>
+            <li>Avaliação anatômica prévia</li>
+            <li>Joia adequada à região</li>
+            <li>Acompanhamento estendido</li>
+          </ul>
+          <a href="https://wa.me/5500000000000" class="btn btn--ghost btn--block" target="_blank" rel="noopener">Agendar</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DEPOIMENTOS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Depoimentos</span>
+        <h2 class="h-section">O que as famílias<br>dizem por aí.</h2>
+      </div>
+
+      <div class="cards-3">
+        <article class="quote">
+          <div class="quote__stars" aria-label="5 de 5 estrelas">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p>"Minha filha tinha muito medo de agulha. A Nah conversou com ela, explicou tudo e em segundos estava pronto. Ela nem percebeu."</p>
+          <div class="quote__author">
+            <span class="quote__avatar">CS</span>
+            <div>
+              <strong>Camila S.</strong>
+              <span>Mãe da Alice, 6 anos</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="quote">
+          <div class="quote__stars" aria-label="5 de 5 estrelas">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p>"Furei minha cartilagem e foi a melhor experiência. Marcação perfeita, ambiente calmo e as orientações de cuidado fizeram toda a diferença na cicatrização."</p>
+          <div class="quote__author">
+            <span class="quote__avatar">RL</span>
+            <div>
+              <strong>Renata L.</strong>
+              <span>Furo de hélix</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="quote">
+          <div class="quote__stars" aria-label="5 de 5 estrelas">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p>"Furei a orelha do meu bebê de 4 meses. Tudo muito limpo, materiais abertos na minha frente e ela chorou por dois segundos. Recomendo demais."</p>
+          <div class="quote__author">
+            <span class="quote__avatar">PT</span>
+            <div>
+              <strong>Patrícia T.</strong>
+              <span>Mãe da Manu, 4 meses</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="faq__grid">
+
+        <div>
+          <span class="eyebrow">Dúvidas frequentes</span>
+          <h2 class="h-section">Perguntas<br>que sempre<br>recebemos.</h2>
+          <p class="lead" style="margin-top:22px; font-size:1rem">
+            Não encontrou sua dúvida? Fale com a gente pelo WhatsApp —
+            respondemos pessoalmente.
+          </p>
+          <a href="https://wa.me/5500000000000" class="btn btn--ghost" style="margin-top:26px" target="_blank" rel="noopener">
+            Tirar uma dúvida
+          </a>
+        </div>
+
+        <div class="faq__list">
+
+          <details class="faq__item" open>
+            <summary>Qual a idade mínima para furar a orelha?</summary>
+            <div class="faq__answer">
+              A partir de 3 meses, desde que o bebê esteja saudável e com a vacinação em dia.
+              Nessa fase a cartilagem ainda é maleável e a cicatrização tende a ser mais rápida.
+              Avaliamos cada caso individualmente antes de confirmar o agendamento.
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>O furo humanizado dói?</summary>
+            <div class="faq__answer">
+              É um desconforto rápido, de poucos segundos. Como usamos agulha (que corta o tecido)
+              em vez de pistola (que rompe), o trauma é menor e a sensação é bem mais suave.
+              Trabalhamos com técnicas de conforto e distração, principalmente com crianças.
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Qual a diferença entre agulha e pistola?</summary>
+            <div class="faq__answer">
+              A pistola força a joia através do tecido, causando microlesões e tendo difícil
+              esterilização completa. A agulha é estéril, descartável, de uso único e corta o
+              tecido de forma precisa — o que reduz o trauma, a dor e o tempo de cicatrização.
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Que joia é colocada no primeiro furo?</summary>
+            <div class="faq__answer">
+              Sempre joias antialérgicas: titânio, ouro cirúrgico ou aço cirúrgico de qualidade.
+              O formato e o tamanho são escolhidos conforme a idade, a região da orelha e a
+              anatomia de cada pessoa, garantindo espaço adequado para a cicatrização.
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Quanto tempo leva para cicatrizar?</summary>
+            <div class="faq__answer">
+              O lóbulo costuma cicatrizar entre 4 e 8 semanas. Cartilagens levam mais tempo,
+              de 3 a 6 meses. Você recebe um guia completo de cuidados e tem canal aberto
+              para tirar dúvidas durante todo esse período.
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Preciso levar alguma coisa no dia?</summary>
+            <div class="faq__answer">
+              Apenas você (ou o bebê) e um documento, se for menor de idade — que deve estar
+              acompanhado de um responsável legal. Todo o material utilizado é nosso e é
+              aberto na sua frente, garantindo total segurança e transparência.
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta">
+        <span class="eyebrow" style="color:var(--rose-light); justify-content:center">Vamos começar</span>
+        <h2>Pronta para o<br><em>primeiro brinco</em>?</h2>
+        <p>
+          Agende seu horário e viva uma experiência tranquila, segura
+          e feita com o cuidado que você merece.
+        </p>
+        <div class="cta__actions">
+          <a href="https://wa.me/5500000000000" class="btn btn--rose" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+            Agendar pelo WhatsApp
+          </a>
+          <a href="#servicos" class="btn btn--light">Ver serviços</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+
+      <div class="footer__brand">
+        <a href="#" class="logo">
+          <span class="logo__mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B5796A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 3v18"/>
+              <circle cx="12" cy="17" r="2.6" fill="#E3C4BA" stroke="none"/>
+            </svg>
+          </span>
+          Agulhas de Algodão
+        </a>
+        <p>
+          Furo de orelha humanizado com técnica de enfermagem,
+          material estéril e cuidado individualizado.
+        </p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/5500000000000" aria-label="WhatsApp" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Navegar</h4>
+        <ul>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="#planos">Pacotes</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Serviços</h4>
+        <ul>
+          <li><a href="#servicos">Furo Baby</a></li>
+          <li><a href="#servicos">Furo Infantil</a></li>
+          <li><a href="#servicos">Furo Adulto</a></li>
+          <li><a href="#servicos">Cartilagem</a></li>
+          <li><a href="#servicos">Troca de joia</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5500000000000" target="_blank" rel="noopener">(00) 00000-0000</a></li>
+          <li><a href="mailto:contato@agulhasdealgodao.com.br">contato@agulhasdealgodao.com.br</a></li>
+          <li>Rua Exemplo, 000 — Sala 0<br>Cidade / UF</li>
+          <li>Seg a Sáb, das 9h às 19h</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 Agulhas de Algodão. Todos os direitos reservados.</p>
+      <p>Responsável técnica: Nakelsa [Sobrenome] — COREN-XX 000000</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ WHATSAPP FLUTUANTE ============ -->
+<a href="https://wa.me/5500000000000" class="wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35zM12.05 21.5h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.19 4.23-9.41 9.42-9.41 2.52 0 4.88.98 6.66 2.76a9.35 9.35 0 0 1 2.76 6.66c0 5.19-4.23 9.41-9.42 9.41zM20.5 3.49A11.8 11.8 0 0 0 12.05 0C5.5 0 .17 5.33.17 11.88c0 2.09.55 4.14 1.59 5.94L.07 24l6.33-1.66a11.85 11.85 0 0 0 5.65 1.44h.01c6.54 0 11.87-5.33 11.87-11.88 0-3.17-1.24-6.15-3.48-8.41z"/></svg>
+  <span>Falar no WhatsApp</span>
+</a>
+
+<script>
+// Header com efeito ao rolar
+const header = document.getElementById('header');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  header.classList.toggle('is-scrolled', y > 20);
+  lastScroll = y;
+}, { passive: true });
+
+// Fecha os outros itens do FAQ ao abrir um (comportamento acordeão)
+const faqItems = document.querySelectorAll('.faq__item');
+faqItems.forEach(item => {
+  item.addEventListener('toggle', () => {
+    if (item.open) {
+      faqItems.forEach(other => {
+        if (other !== item) other.open = false;
+      });
+    }
+  });
+});
+
+// Rolagem suave para links internos (fallback para navegadores antigos)
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const top = target.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
