@@ -16,9 +16,9 @@
   --plum:       #3D2A33;
   --line:       #E4DAD2;
 
-  /* Tipografia */
-  --display: 'Fraunces', Georgia, serif;
-  --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* Tipografia */
+  --display: 'Cormorant Garamond', 'Times New Roman', serif;
+  --body: 'Jost', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Layout */
   --max: 1200px;
@@ -965,4 +965,51 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 400; line-height: 1.1
     transition-duration: .01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--display);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -.005em;
+}
+
+/* Cormorant é naturalmente alta — reduzimos um pouco o tamanho pra não dominar */
+.h-display { font-size: clamp(2.6rem, 6.4vw, 4.8rem); font-weight: 300; }
+.h-section { font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 300; }
+
+/* O itálico fica especialmente bonito nessa fonte — vale destacar */
+.hero__title em,
+.cta h2 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--rose);
+}
+
+.eyebrow {
+  /* ... */
+  letter-spacing: .22em;   /* era .14em */
+}
+
+.marquee__track span {
+  /* ... */
+  letter-spacing: .16em;   /* era .1em */
+}
+
+.plan__tag {
+  /* ... */
+  letter-spacing: .18em;   /* era .1em */
+}
+
+.logo {
+  /* ... */
+  font-weight: 400;   /* era 500 */
+  letter-spacing: .005em;   /* respiro maior */
+}
+
+.btn {
+  /* ... */
+  font-weight: 400;   /* era 500 */
+  letter-spacing: .05em;   /* era .01em — dá ar mais elegante */
+  text-transform: none;
 }
