@@ -1002,3 +1002,50 @@ h1, h2, h3, h4 {
     scroll-behavior: auto !important;
   }
 }
+
+/* ============================================
+   17. AJUSTE DE LEGIBILIDADE
+   Pesos mais firmes para leitura confortável
+   ============================================ */
+
+/* Corpo do texto em geral — sobe de 300 para 400 */
+body { font-weight: 400; }
+
+/* Títulos — 400 dá presença sem perder a delicadeza */
+h1, h2, h3, h4 { font-weight: 400; }
+
+/* Parágrafos, descrições e textos pequenos — todos em 400 */
+.lead,
+.hero__proof p,
+.hero__badge,
+.feature p,
+.service p,
+.service li,
+.step p,
+.plan__desc,
+.plan__period,
+.plan__features li,
+.quote__author span,
+.faq__answer,
+.cta p,
+.footer__brand p,
+.footer__col a,
+.footer__col li,
+.footer__bottom p,
+.nav__links a {
+  font-weight: 400;
+}
+
+/* Botões — um pouco mais firmes para destacar */
+.btn { font-weight: 500; }
+
+/* Destaques que ganham presença extra */
+.h-display { font-weight: 400; }
+.h-section { font-weight: 400; }
+.step__num { font-weight: 400; }
+.plan__price { font-weight: 400; }
+.quote p { font-weight: 400; }
+
+/* Pequenos elementos que estavam quase invisíveis */
+.plan__tag { font-weight: 500; }
+.footer__col h4 { font-weight: 500; }
